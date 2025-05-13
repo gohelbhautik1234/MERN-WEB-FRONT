@@ -1,0 +1,65 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    @apply grid grid-cols-1 mx-4 mt-4 gap-5;
+
+    .nav-link {
+      @apply rounded-md px-5 py-2 hover:bg-gray-200;
+    }
+
+    .auth-btn {
+      @apply px-4 py-2 rounded-md hover:bg-[#FF9500] text-black;
+    }
+}
+
+.auth-card {
+  @apply grid grid-cols-1 gap-4 bg-white rounded-lg py-5 px-10 md:order-last order-first ;
+}
+
+.auth-content {
+  @apply text-center grid grid-cols-1 gap-2;
+}
+
+.auth-content>div:nth-child(1) {
+  @apply text-3xl font-semibold tracking-wide;
+}
+
+.input-field {
+  @apply border border-gray-200 bg-gray-50 rounded-md p-4;
+}
+
+.cta-button {
+  @apply px-4 py-2 rounded-md bg-[#FF9500] text-white cursor-pointer tracking-wide
+}
+
+body {
+  /* margin: 0;
+  display: flex;
+  place-items: center; */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
