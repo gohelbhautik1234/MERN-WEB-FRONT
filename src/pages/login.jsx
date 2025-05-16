@@ -28,14 +28,11 @@ export default function Edit() {
     }
     async function handlesubmit() {
         const newerrors = validationForm();
-        console.log(newerrors)
         if (Object.keys(newerrors).length) {
             seterror(newerrors);
         }
         else {
-            console.log("Logiinfo", Logiinfo);
             let data = await axios.post("https://mern-web-backend.vercel.app/login", Logiinfo);
-            console.log(data);
             if (data.data == false) {
                 navigate("/Signup")
             }

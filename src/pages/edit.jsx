@@ -4,7 +4,6 @@ import axiosinstance from '../utils/axiosinstance';
 export default function Edit() {
   const params = useParams();
   const navigate = useNavigate();
-  console.log(params.id);
 
   const [Productinfo, setProductinfo] = useState({
     name: '',
@@ -56,7 +55,7 @@ export default function Edit() {
 
       if (data?.data?.modifiedCount == 1) {
         toast.success("Product Update successfully!");
-        navigate("/")
+        navigate("/view")
 
       }
       else {

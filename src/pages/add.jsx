@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import axiosinstance from '../utils/axiosinstance';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Add() {
+
+  const navigate = useNavigate()
 
   const [Productinfo, setProductinfo] = useState({
     name: '',
@@ -43,8 +46,9 @@ export default function Add() {
     }
     else {
       const data = await axiosinstance.post("/addproduct", Productinfo);
-      if (data.status == 200) {
+      if (data.status == 200 && data.data.success) {
         toast.success("Product added successfully!")
+        navigate('/view')
       }
       else {
         toast.error("Failed to add product. Please check your input or try again.");
