@@ -1,7 +1,8 @@
 import axios from 'axios'
 
+// const Url=http://localhost:5000 //local
 const axiosinstance=axios.create({
-    baseURL:'http://localhost:5000',
+    baseURL:'https://mern-web-backend.vercel.app',
     headers:{
         "Content-Type":"application/json",
     },

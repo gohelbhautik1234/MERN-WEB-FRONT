@@ -14,7 +14,7 @@ export default function View() {
     }, [location])
 
     const getProduct = async () => {
-        const data = await axios.get("http://localhost:5000/getproduct");
+        const data = await axios.get("https://mern-web-backend.vercel.app/getproduct");
         setProductlist(data.data);
     }
 
@@ -32,7 +32,7 @@ export default function View() {
     }, [searchinput])
 
     const searchproduct = async () => {
-        const data = await axios.get(`http://localhost:5000/searchproduct/${searchinput}`);
+        const data = await axios.get(`https://mern-web-backend.vercel.app/searchproduct/${searchinput}`);
         console.log("seachinput", searchinput);
         if (searchinput == '') {
             setProductlist(products);

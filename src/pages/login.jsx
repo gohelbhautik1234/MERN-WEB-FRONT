@@ -34,7 +34,7 @@ export default function Edit() {
         }
         else {
             console.log("Logiinfo", Logiinfo);
-            let data = await axios.post("http://localhost:5000/login", Logiinfo);
+            let data = await axios.post("https://mern-web-backend.vercel.app/login", Logiinfo);
             console.log(data);
             if (data.data == false) {
                 navigate("/Signup")

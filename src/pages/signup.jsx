@@ -38,7 +38,7 @@ export default function Edit() {
             seterror(newerrors);
         }
         else {
-            let data = await axios.post("http://localhost:5000/register", Signupinfo);
+            let data = await axios.post("https://mern-web-backend.vercel.app/register", Signupinfo);
             console.log(data);
             localStorage.setItem('token', data.auth);
             localStorage.setItem('user', data.data._id);
